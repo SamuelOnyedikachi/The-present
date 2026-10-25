@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#34153d" name="theme-color"/>
+<title>Happy Birthday, My Sweet Mummy 💕</title>
+<style>
+    :root{
+      --bg:#1f0d26;
+      --bg-2:#5f2b50;
+      --card:#2b1235cc;
+      --card-soft:#ffffff12;
+      --line:#ffffff22;
+      --cream:#fbf4ee;
+      --blush:#f2dce2;
+      --gold:#e8c282;
+      --rose:#d89ab4;
+      --plum:#34153d;
+      --shadow:0 24px 60px rgba(10, 4, 13, .35);
+      --radius:30px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+      color:var(--cream);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(255,217,164,.16), transparent 18%),
+        radial-gradient(circle at 85% 30%, rgba(255,190,220,.12), transparent 20%),
+        radial-gradient(circle at 50% 85%, rgba(255,220,170,.09), transparent 22%),
+        linear-gradient(160deg, #22102b, #5f2c50 52%, #744465);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image:radial-gradient(circle, rgba(232,194,130,.9) 0 1px, transparent 1.5px);
+      background-size:110px 110px;
+      opacity:.2;
+    }
+
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
+    a{text-decoration:none}
+
+    .wrap{width:min(1120px, calc(100% - 32px));margin:auto}
+    .eyebrow{
+      display:inline-block;
+      padding:10px 16px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.08);
+      color:var(--gold);
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      border-radius:999px;
+      font-size:.78rem;
+      font-weight:700;
+      backdrop-filter:blur(6px);
+    }
+
+    .hero{
+      position:relative;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:72px 0 50px;
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:34px;
+      align-items:center;
+    }
+
+    .hero-copy h1{
+      font-size:clamp(3rem, 7vw, 5.8rem);
+      line-height:.96;
+      margin:20px 0 18px;
+    }
+    .hero-copy h1 span{display:block;color:var(--gold);font-style:italic}
+    .hero-copy p{
+      max-width:640px;
+      color:var(--blush);
+      font-size:1.08rem;
+      line-height:1.85;
+      margin:0 0 28px;
+    }
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:15px 24px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:700;
+      box-shadow:var(--shadow);
+      transition:.25s ease;
+    }
+    .btn-primary{background:linear-gradient(135deg, #f3d7a4, #dca95a); color:#371636}
+    .btn-secondary{background:rgba(255,255,255,.08); color:var(--cream); border-color:var(--line)}
+    .btn:hover{transform:translateY(-3px)}
+
+    .hero-frame{
+      position:relative;
+      background:linear-gradient(180deg, rgba(255,255,255,.17), rgba(255,255,255,.06));
+      border:1px solid var(--line);
+      border-radius:36px;
+      padding:16px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(8px);
+    }
+    .hero-frame img{
+      width:100%;
+      display:block;
+      border-radius:26px;
+      object-fit:cover;
+      aspect-ratio:1/1;
+    }
+    .hero-tag{
+      position:absolute;
+      left:24px;
+      bottom:22px;
+      background:rgba(36,16,41,.82);
+      color:var(--cream);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:16px 18px;
+      backdrop-filter:blur(8px);
+      max-width:78%;
+      box-shadow:var(--shadow);
+    }
+    .hero-tag b{display:block;color:var(--gold);margin-bottom:5px}
+
+    main section{padding:78px 0}
+    .section-head{max-width:720px;margin:0 auto 32px;text-align:center}
+    .section-head h2{font-size:clamp(2rem,4vw,3.5rem);margin:16px 0 10px}
+    .section-head p{color:var(--blush);line-height:1.8}
+
+    .video-shell,
+    .letter,
+    .closing-card,
+    .mini-card,
+    .gallery-card,
+    .blessing,
+    .feature{
+      background:var(--card);
+      border:1px solid var(--line);
+      backdrop-filter:blur(9px);
+      box-shadow:var(--shadow);
+    }
+
+    .video-shell{
+      max-width:430px;
+      margin:0 auto;
+      padding:16px;
+      border-radius:34px;
+    }
+    .video-shell video{display:block;width:100%;border-radius:24px;background:#120813}
+
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .feature{padding:24px;border-radius:24px;text-align:left}
+    .feature b{display:block;color:var(--gold);font-size:1.15rem;margin-bottom:10px}
+    .feature p{margin:0;color:var(--blush);line-height:1.7}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .gallery-card{padding:12px;border-radius:26px}
+    .gallery-card img{width:100%;display:block;border-radius:18px;aspect-ratio:1/1;object-fit:cover}
+    .gallery-card p{margin:14px 8px 6px;text-align:center;color:var(--blush);line-height:1.6}
+
+    .split{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:24px;
+      align-items:start;
+    }
+    .mini-stack{display:grid;gap:18px}
+    .mini-card{padding:24px;border-radius:24px}
+    .mini-card h3{margin:0 0 10px;color:var(--gold);font-size:1.45rem}
+    .mini-card p{margin:0;color:var(--blush);line-height:1.75}
+
+    .letter{
+      border-radius:32px;
+      padding:clamp(24px,5vw,48px);
+    }
+    .letter p{
+      font-family:Georgia,"Times New Roman",serif;
+      color:var(--cream);
+      font-size:clamp(1.05rem,2vw,1.24rem);
+      line-height:1.95;
+      margin:0 0 16px;
+    }
+    .letter .sign{color:var(--gold);font-weight:bold}
+
+    .blessings{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+    .blessing{padding:22px 16px;border-radius:24px;text-align:center}
+    .blessing .icon{font-size:1.7rem;margin-bottom:10px;display:block}
+    .blessing b{display:block;color:var(--gold);margin-bottom:8px;font-size:1.05rem}
+    .blessing span{color:var(--blush);line-height:1.65;display:block}
+
+    .closing-card{
+      border-radius:34px;
+      padding:56px 24px;
+      text-align:center;
+    }
+    .closing-card h2{font-size:clamp(2.2rem,5vw,4rem);margin:16px 0}
+    .closing-card p{max-width:760px;margin:0 auto 26px;color:var(--blush);line-height:1.85}
+
+    footer{padding:20px 0 34px;text-align:center;color:#f0dfe6;font-size:.92rem}
+
+    @media (max-width: 920px){
+      .hero-grid,.split,.gallery,.features,.blessings{grid-template-columns:1fr}
+      .hero{min-height:auto;padding-top:50px}
+      .hero-frame{max-width:520px;margin:0 auto}
+      .hero-copy{text-align:center}
+      .hero-actions{justify-content:center}
+      .hero-copy p{margin-left:auto;margin-right:auto}
+    }
+
+    @media (prefers-reduced-motion:no-preference){
+      .floating{animation:float 5.5s ease-in-out infinite}
+      .floating-slow{animation:float 7.5s ease-in-out infinite}
+    }
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  </style>
+</head>
+<body>
+<header class="hero" id="top">
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<span class="eyebrow">A day to honour you</span>
+<h1>Happy Birthday,<span>My Sweet Mummy 💕</span></h1>
+<p>
+          Today we celebrate your beautiful heart, your strength, your kindness, and the love you pour into everyone around you.
+          May this new chapter bring you more joy, peace, good health, and countless reasons to smile.
+        </p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#video">▶ Watch your birthday video</a>
+<a class="btn btn-secondary" href="#letter">💌 Read your birthday letter</a>
+</div>
+</div>
+<div class="hero-frame floating">
+<img alt="My Sweet Mummy birthday memory" src="assets/photo1.jpg"/>
+<div class="hero-tag">
+<b>For My Sweet Mummy</b>
+          For the woman whose sacrifices have meant more than words can express.
+        </div>
+</div>
+</div>
+</header>
+<main>
+<section id="video">
+<div class="wrap">
+<div class="section-head">
+<span class="eyebrow">Birthday video</span>
+<h2>A message from my heart</h2>
+<p>These are the words I want you to hear today, Mummy — words of gratitude, honour and prayer.</p>
+</div>
+<div class="video-shell floating-slow">
+<video controls="" playsinline="" poster="assets/photo1.jpg" preload="metadata">
+<source src="birthday-video.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="features">
+<article class="feature">
+<b>A message just for you</b>
+<p>This celebration is for you, Mummy, and for the ways you have been there for your family.</p>
+</article>
+<article class="feature">
+<b>A special day for you</b>
+<p>Today, may you feel appreciated for all you have given, including the sacrifices nobody noticed.</p>
+</article>
+<article class="feature">
+<b>A prayer for your future</b>
+<p>May the years ahead give you peace, strength, good health, and time to enjoy the fruits of your labour.</p>
+</article>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="section-head">
+<span class="eyebrow">Photo gallery</span>
+<h2>Moments worth celebrating</h2>
+<p>These pictures remind me of the woman I am privileged to call Mummy. May we have many more years to make beautiful memories together.</p>
+</div>
+<div class="gallery">
+<article class="gallery-card"><img alt="A joyful shared memory" src="assets/photo1.jpg"/><p>A moment together, and a memory worth keeping.</p></article>
+<article class="gallery-card"><img alt="A beautiful smiling portrait" src="assets/photo2.jpg"/><p>Behind your smile is a story of strength and perseverance.</p></article>
+<article class="gallery-card"><img alt="A graceful portrait" src="assets/photo3.jpg"/><p>There is so much more ahead for you to enjoy, Mummy.</p></article>
+</div>
+</div>
+</section>
+<section id="letter">
+<div class="wrap split">
+<div class="mini-stack">
+<article class="mini-card">
+<h3>What I want you to know</h3>
+<p>Your sacrifices have not been forgotten. Your efforts matter. The ways you showed up for your family, even when it was not easy, have made a difference.</p>
+</article>
+<article class="mini-card">
+<h3>What I pray for you</h3>
+<p>May God give you long life, sound health, restful days, and the privilege of seeing the good things you have prayed for come to pass.</p>
+</article>
+</div>
+<article class="letter">
+<p>Dear <strong>My Sweet Mummy</strong>,</p>
+<p>On your birthday, I find myself thinking about the many things you have done for us. Some were obvious; others were quiet sacrifices that may have gone unnoticed. I want you to know that I do not take them for granted.</p>
+<p>You have spent so much of your life thinking about the wellbeing of others. My wish is that this season brings you the chance to enjoy life more fully — without unnecessary worries, with time to rest, and with plenty of reasons to smile.</p>
+<p>I pray that God protects your health, renews your strength, grants you peace, and blesses the work of your hands. May you enjoy the fruits of your labour, witness your children flourish, and see the answers to prayers you have carried for years.</p>
+<p>Thank you, Mummy, for the care, the patience, the encouragement, and everything you have poured into your family. If I do not say it often enough, I want to say it clearly today: I am grateful for you.</p>
+<p class="sign">Happy birthday, My Sweet Mummy. With a grateful heart. 💕</p>
+</article>
+</div>
+<div class="wrap">
+<div class="blessings">
+<div class="blessing"><span class="icon">🌷</span><b>Gratitude</b><span>May you never have to wonder whether your sacrifices mattered.</span></div>
+<div class="blessing"><span class="icon">🕊️</span><b>Peace</b><span>May your heart find rest from every worry.</span></div>
+<div class="blessing"><span class="icon">✨</span><b>Fulfilment</b><span>May you see the beautiful results of your years of hard work.</span></div>
+<div class="blessing"><span class="icon">🙏</span><b>God’s Grace</b><span>May God preserve you in strength and sound health.</span></div>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="closing-card">
+<span class="eyebrow">A beautiful new chapter</span>
+<h2>May the years ahead be gentle with you.</h2>
+<p>
+            More laughter. More peace. More favor. More grace. More beautiful memories.
+            Happy Birthday, My Sweet Mummy 💕
+          </p>
+<a class="btn btn-primary" href="#top">↑ Back to the top</a>
+</div>
+</div>
+</section>
+</main>
+<footer>
+    A birthday tribute for My Sweet Mummy 💐
+  </footer>
+</body>
+</html>
